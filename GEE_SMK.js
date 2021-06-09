@@ -103,24 +103,11 @@ var group = function(array) {
   return groupSizes;
 };
 
-// See equation 2.6 in Sen (1968).
-var factors = function(image) {
-  return image.expression('b() * (b() - 1) * (b() * 2 + 5)');
-};
-
-var groupSizes = group(groups.toArray());
-var groupFactors = factors(groupSizes);
-var groupFactorSum = groupFactors.arrayReduce('sum', [0])
-      .arrayGet([0, 0]);
-
-
 var count = ee.Image(19);
-
 var factors = function(image) {
   return image.expression('b() * (b() - 1) * (b() * 2 + 5)');
 };
 var kendallVariance = factors(count).multiply(12)
-
 
 // Compute Z-statistics.
 var zero = kendall.multiply(kendall.eq(0));
