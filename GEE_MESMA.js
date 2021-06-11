@@ -172,7 +172,8 @@ var bands = ['Nadir_Reflectance_Band3', 'Nadir_Reflectance_Band4','Nadir_Reflect
       'Nadir_Reflectance_Band5','Nadir_Reflectance_Band6','Nadir_Reflectance_Band7']
 // mesma function and transform to int16 with factor 0.0001.
 var mesma = function(image) {
-    var date = ee.Date(image.get('system:time_start')).format('yyyy-MM-dd');
+    var doy = ee.Date(image.get('system:time_start')).getRelative('month', 'year');
+    var date = ee.Date(image.get('system:time_start'));
     var ks = ee.Image(image.select(bands)).multiply(0.0001);
     var ummixed = function(i){
       var id = ee.Image(em_lib.indexOf(i)).rename('id');
@@ -210,7 +211,7 @@ var mesma = function(image) {
   var unmixed_result =  em_lib.map(ummixed);
   unmixed_result = ee.ImageCollection(unmixed_result).qualityMosaic('rmse');
   
-  return unmixed_result.set('system:time_start',date);  
+  return unmixed_result.set('system:time_start1',date).set('system:time_start',date.millis()).set('doy',doy);  
 };
 
 
