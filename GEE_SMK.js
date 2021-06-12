@@ -110,6 +110,7 @@ print (monthgroup)
 
 
 // Secdond, counting kendallvariance for each time series of given month
+// the algorithm 
 var groups_month = function(m){
   // each endmember
   var smoothed = ee.ImageCollection.fromImages(monthgroup.get(m)).select('IS'); 
