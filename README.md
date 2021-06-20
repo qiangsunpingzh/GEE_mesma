@@ -1,6 +1,6 @@
 # GEE_mesma_seasonal Mann-Kendall test
 
-This code is designed in Google Earth engine (GEE) platform for esitimates of endmemebr fractions using Multiple Endmember Spectral Mixture Analysis (MESMA) approach.                                                                               
+This code is designed in Google Earth engine (GEE) platform for estimates of endmemebr fractions using Multiple Endmember Spectral Mixture Analysis (MESMA) approach.                                                                               
 # MESMA
 The pixels recorded in satellite images often contain more than one ground units, this leads to inaccuracies in the monitoring of surface structure, state and function. Recent advances in spectral mixture analysis (SMA) methods have facilitated investigation of estimating fractional endmember abundances in the mixed pixels. This method assumes that the reflectance of target mixing pixel is a linear combination of the weighting coefficients (proportional endmembers) and associated pure spectra.
 
