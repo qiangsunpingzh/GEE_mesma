@@ -1,4 +1,4 @@
-ar region = 
+var region = 
     /* color: #d63000 */
     /* displayProperties: [
       {
